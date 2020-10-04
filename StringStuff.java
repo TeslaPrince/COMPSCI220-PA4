@@ -14,8 +14,13 @@ public class StringStuff {
 		return true;
 	}
 	public static String longestPalindromeWithin(String str) {
-		String longestSub = "";
-		return longestSub;
+		String longSub = "";
+		for(int i = 0; i < str.length(); i++) {
+			for(int j = str.length(); j >= i; j--) {
+				String substring = str.substring(i,j);
+			}
+		}
+		return longSub;
 	}
 	public static boolean containsAllDigits(String str) {
 		boolean[] contains09 = {false, false, false, false, false, false, false, false, false, false};
@@ -42,7 +47,21 @@ public class StringStuff {
 		}
 		return out.toString();
 	}
-	/*public static String runLengthEncode(String str) {
-		return "";
-	}*/
+	public static String runLengthEncode(String str) {
+		StringBuilder rle = new StringBuilder();
+		for (int i = 0; i < str.length(); i++) {
+			int count = 1;
+			while (i < str.length() - 1 && str.charAt(i) == str.charAt(i + 1)) {
+				count++;
+				i++;
+			}
+			if (count == 1) {
+				rle.append(String.valueOf(str.charAt(i)));
+			}
+			else {
+				rle.append(String.valueOf(str.charAt(i)) + count);
+			}
+		}
+		return rle.toString();
+	}
 }
