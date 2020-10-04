@@ -1,7 +1,5 @@
 package PA4;
 
-import java.util.Arrays;
-
 public class StringStuff {
 	public static boolean isPalindrome(String str) {
 		int a = 0;
@@ -36,11 +34,15 @@ public class StringStuff {
 		}
 		return true;
 	}
-	/*public static String replaceAll(String text, String key, String replacement) {
-		
-		return"";
+	public static String replaceAll(String text, String key, String replacement) {
+		String[] a = text.split(key);
+		StringBuilder out = new StringBuilder();
+		for(int i = 0; i <= a.length - 1; i++) {
+			out.append(a[i]).append(replacement);
+		}
+		return out.toString();
 	}
-	public static String runLengthEncode(String str) {
+	/*public static String runLengthEncode(String str) {
 		return "";
 	}*/
 }
