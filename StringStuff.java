@@ -18,6 +18,12 @@ public class StringStuff {
 		for(int i = 0; i < str.length(); i++) {
 			for(int j = str.length(); j >= i; j--) {
 				String substring = str.substring(i,j);
+				if(isPalindrome(substring)) {
+					if (substring.length() > longSub.length()){
+						longSub = substring;
+						break;
+					}
+				}
 			}
 		}
 		return longSub;
